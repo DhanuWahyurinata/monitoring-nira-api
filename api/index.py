@@ -5,8 +5,13 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Load model ANFIS yang sudah kamu buat
-model = joblib.load('model_anfis.pkl')
+# Tentukan path file secara absolut biar Vercel tidak nyasar
+# Simpan model_anfis.pkl di folder yang sama dengan api/ (atau di root)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, 'model_anfis.pkl') 
+
+# Load model
+model = joblib.load(model_path)
 
 # Simulasi Database sederhana di memori (biar bisa dilihat datanya)
 data_log = []
