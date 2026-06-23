@@ -1,2 +1,6 @@
-Flask==3.0.2
-requests==2.31.0
+flask
+flask-cors
+joblib
+pandas
+numpy
+scikit-fuzzy
